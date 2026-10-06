@@ -2,12 +2,12 @@ package org.locacao;
 
 public class LocacaoDiaria extends Locacao {
 
-    public LocacaoDiaria(FabricaAbstrata fabrica) {
-        super(fabrica);
+    public LocacaoDiaria(FabricaAbstrata fabrica, double preco) {
+        super(fabrica, preco);
     }
 
     @Override
     public double calcularValor() {
-        return carro.calcularValor();
+        return this.preco * (1 + this.carro.percentualPreco());
     }
 }

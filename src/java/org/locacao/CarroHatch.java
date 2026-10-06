@@ -3,12 +3,7 @@ package org.locacao;
 public class CarroHatch implements Carro {
 
     @Override
-    public String getDescricao() {
-        return "Carro Hatch";
-    }
-
-    @Override
-    public double calcularValor() {
-        return 80;
+    public double percentualPreco() {
+        return 0.2f;
     }
 }

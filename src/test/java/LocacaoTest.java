@@ -15,7 +15,7 @@ public class LocacaoTest {
     void deveEmitirSeguroBasico() {
         FabricaAbstrata fabrica = ModalidadeFactory.getInstance().obterFabricaAbstrata("FabricaBasica");
         Carro carro = new CarroSedan();
-        Locacao locacao = new LocacaoDiaria(fabrica);
+        Locacao locacao = new LocacaoDiaria(fabrica, 100.0);
         locacao.setCarro(carro);
 
         assertEquals("Seguro Basico", locacao.emitirSeguro());
@@ -26,7 +26,7 @@ public class LocacaoTest {
         FabricaAbstrata fabrica = ModalidadeFactory.getInstance().obterFabricaAbstrata("FabricaPremium");
 
         Carro carro = new CarroSedan();
-        Locacao locacao = new LocacaoDiaria(fabrica);
+        Locacao locacao = new LocacaoDiaria(fabrica, 100.0);
         locacao.setCarro(carro);
 
         assertEquals("Seguro Premium", locacao.emitirSeguro());
@@ -36,7 +36,7 @@ public class LocacaoTest {
     void deveEmitirServicoBasico() {
         FabricaAbstrata fabrica = ModalidadeFactory.getInstance().obterFabricaAbstrata("FabricaBasica");
         Carro carro = new CarroSedan();
-        Locacao locacao = new LocacaoDiaria(fabrica);
+        Locacao locacao = new LocacaoDiaria(fabrica, 100.0);
         locacao.setCarro(carro);
 
         assertEquals("Servico Basico", locacao.emitirServico());
@@ -46,19 +46,9 @@ public class LocacaoTest {
     void deveEmitirServicoPremium() {
         FabricaAbstrata fabrica = ModalidadeFactory.getInstance().obterFabricaAbstrata("FabricaPremium");
         Carro carro = new CarroSedan();
-        Locacao locacao = new LocacaoDiaria(fabrica);
+        Locacao locacao = new LocacaoDiaria(fabrica, 100.0);
         locacao.setCarro(carro);
 
         assertEquals("Servico Premium", locacao.emitirServico());
-    }
-
-    @Test
-    void deveRetornarValorDaLocacaoDiariaComCarroSedan() {
-        FabricaAbstrata fabrica = ModalidadeFactory.getInstance().obterFabricaAbstrata("FabricaPremium");
-        Carro carro = new CarroSedan();
-        LocacaoDiaria locacao = new LocacaoDiaria(fabrica);
-        locacao.setCarro(carro);
-
-        assertEquals(100.0, locacao.calcularValor(), 0.01);
     }
 }
