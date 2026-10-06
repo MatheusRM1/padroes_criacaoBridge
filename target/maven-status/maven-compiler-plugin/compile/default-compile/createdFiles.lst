@@ -1,0 +1,14 @@
+org\locacao\SeguroPremium.class
+org\locacao\Seguro.class
+org\locacao\FabricaPremium.class
+org\locacao\ServicoPremium.class
+org\locacao\FabricaBasica.class
+org\locacao\CarroHatch.class
+org\locacao\Locacao.class
+org\locacao\Servico.class
+org\locacao\ServicoBasico.class
+org\locacao\FabricaAbstrata.class
+org\locacao\ModalidadeFactory.class
+org\locacao\Carro.class
+org\locacao\CarroSedan.class
+org\locacao\SeguroBasico.class

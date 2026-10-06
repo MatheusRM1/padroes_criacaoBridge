@@ -1,19 +1,28 @@
 package org.locacao;
 
-public class Locacao {
+public abstract class Locacao {
 
-    private static Locacao instance;
+    protected Carro carro;
+    protected Seguro seguro;
+    protected Servico servico;
 
-    private Seguro seguro;
-    private Servico servico;
+    public Locacao(Carro carro, FabricaAbstrata fabrica){
 
-    public Locacao(FabricaAbstrata fabrica){
+        this.carro = carro;
         this.seguro = fabrica.createSeguro();
         this.servico = fabrica.createServico();
     }
 
-    public String emitirSeguro(){return this.seguro.emitirNota();}
+    public String emitirSeguro(){return seguro.emitirNota();}
 
-    public String emitirServico(){ return  this.servico.emitirNota();}
+    public String emitirServico(){ return  servico.emitirNota();}
+
+    public String getCarro() {
+        return carro.getDescricao();
+    }
+
+    public double calcularValor() {
+        return carro.calcularValor();
+    }
 
 }
