@@ -6,9 +6,8 @@ public abstract class Locacao {
     protected Seguro seguro;
     protected Servico servico;
 
-    public Locacao(Carro carro, FabricaAbstrata fabrica){
+    public Locacao(FabricaAbstrata fabrica){
 
-        this.carro = carro;
         this.seguro = fabrica.createSeguro();
         this.servico = fabrica.createServico();
     }
@@ -19,6 +18,10 @@ public abstract class Locacao {
 
     public String getCarro() {
         return carro.getDescricao();
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
     }
 
     public double calcularValor() {

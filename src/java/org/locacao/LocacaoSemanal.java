@@ -1,7 +1,9 @@
+package org.locacao;
+
 public class LocacaoSemanal extends Locacao {
 
-    public LocacaoSemanal(Carro carro, FabricaAbstrata fabrica) {
-        super(carro, fabrica);
+    public LocacaoSemanal(FabricaAbstrata fabrica) {
+        super(fabrica);
     }
 
     @Override
